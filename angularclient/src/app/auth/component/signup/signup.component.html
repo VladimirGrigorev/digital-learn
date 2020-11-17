@@ -1,0 +1,53 @@
+<body class="text-center">
+  <form class="form-signup" [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+    <app-alert></app-alert>
+    <h1 class="h2 mb-3 font-weight-normal">Пожалуйста зарегистрируйтесь</h1>
+    <div class="form-group">
+      <label for="username">Имя</label>
+      <input type="text" formControlName="username" class="form-control" required
+             [ngClass]="{ 'is-invalid': f.username.touched && f.username.errors }" />
+      <div *ngIf="f.username.touched && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Пустое имя!</div>
+        <div *ngIf="f.username.errors.minlength">Имя слишком короткое (Минимум 4 символа)</div>
+        <div *ngIf="f.username.errors.maxlength">Имя слишком длинное (Максимум 15 символов)</div>
+        <div *ngIf="f.username.errors.usernameTaken">Пользователь с этим именем уже зарегистрирован</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" class="form-control" required
+             [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }" />
+      <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email не может быть пустым</div>
+        <div *ngIf="f.email.errors.pattern">Email не валиден</div>
+        <div *ngIf="f.email.errors.emailTaken">Пользователь с этим email именем уже зарегистрирован</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Пароль</label>
+      <input type="password" formControlName="password" class="form-control" required
+             [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors }" />
+      <small class="form-text text-muted">Пароль должен быть от 4 до 20 символов</small>
+      <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Пожалуйста введите свой пароль!</div>
+        <div *ngIf="f.password.errors.minlength">Пароль слишком короткий (Минимум 4 символа)</div>
+        <div *ngIf="f.password.errors.maxlength">Пароль слишком длинный (Максимум 20 символов)</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-block">Зарегистрироваться</button> <br />
+      <div id = "google-button" class="rounded">
+        <a href="{{GOOGLE_AUTH_URL}}"
+           class="btn btn-outline-light text-dark btn-block" role="button">
+          <img src='../../../assets/google-logo.png' alt="Google" id="google-image"/>Зарегистрироваться с Google</a>
+      </div>
+      <div id = "github-button" class="rounded">
+        <a href="{{GITHUB_AUTH_URL}}"
+           class="btn btn-outline-light text-dark btn-block" role="button">
+          <img src='../../../assets/github-logo.png' alt="Github" id="github-image"/> Зарегистрироваться с Github</a>
+      </div>
+      <br />
+      Уже зарегистрированны? <br /><a [routerLink]="['/login']" class="btn btn-link">Войти сейчас!</a>
+    </div>
+  </form>
+</body>

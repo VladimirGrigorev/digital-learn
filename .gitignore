@@ -1,0 +1,9 @@
+target
+.idea
+app.log
+*.iml
+
+# dependencies
+/node_modules
+/npm-debug.log
+/out/

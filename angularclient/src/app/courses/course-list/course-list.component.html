@@ -1,0 +1,78 @@
+<div class="row no-gutters">
+  <div class="col-md-3">
+    <div id="category-list">
+      <a id="category-text">Категории</a>
+      <div id="category-list-conteiner">
+        <div class="row" *ngFor="let category of categories" (click)="doFilter(category.name)">
+          <a class="mt-3">{{category.name}}<br/></a>
+        </div>
+      </div>
+      <button class="btn" id="clear-btn" (click)="clearFilter()">Очистить</button>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <div class="navbar navbar-expand-sm navbar-dark" id="category-navbar">
+      <a id="text-1">Сортировать по:</a>
+      <a id="sorter-1" class="pl-3" (click)="sortByRating()">Рейтинг</a>
+      <a id="sorter-2" class="pl-3" (click)="sortByPrice()">Стоимость</a>
+
+      <a id="text-2" class="nav-link ml-4" (click)="sortASC()"><i class="fa fa-sort-amount-desc"></i>убыванию</a>
+
+      <a id="text-3" class="nav-link" (click)="sortDesc()"><i class="fa fa-sort-amount-asc"></i>возрастанию</a>
+
+      <button id="add-course" type="submit" class="btn btn-outline-success pl-3" *ngIf="isMentor()" routerLink='/add-course'>Создать курс</button>
+    </div>
+
+    <div class="container">
+      <div class="row courses_list_container">
+        <div *ngFor="let course of courses; let i = index;" class="col-md-5 course_card" (click)="click(course.id, true)">
+          <div class="row justify-content-start">
+            <div class="col-xl-5 col-md-6 course_img_container">
+              <img class="course_img" src="{{course.imgUrl}}" width="170" height="153" *ngIf="course.imgUrl">
+              <img class="course_img" src="./assets/16.jpg" width="170" height="153" *ngIf="!course.imgUrl">
+            </div>
+            <div class="col-xl-7 col-md-6 course_info_container">
+              <div class="stars">
+                <span *ngFor="let j of courseService.getRatingArray(course)">{{j ? '★' : '☆'}}</span>
+              </div>
+              <a class="course_title" (click)="click(course.id, true)" style="color: #FFFFFF;">{{courseName(course)}}</a>
+              <p class="course_description">{{courseDescription(course)}}</p>
+              <input class="course_buy_btn" type="button" value="В корзину" (click)="click(course.id, false)" *ngIf="isLoggedIn() && !isMentor();">
+              <input class="course_delete_btn" type="button" value="Удалить" (click)="clickDelete(course.id, false)" *ngIf="isMentor();">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav aria-label="Page navigation" *ngIf="!isSearch">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" (click)="prevPage()" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item" *ngFor="let j of countPages; let n = index;">
+          <a class="page-link" (click)="thisPage(n + 1)">{{n + 1}}</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" (click)="nextPage()" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav  aria-label="Page navigation" *ngIf="isSearch">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" style="margin-left: 130px">1</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>

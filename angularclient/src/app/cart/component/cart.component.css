@@ -1,0 +1,199 @@
+.cart_label {
+  color: #FFFFFF;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 21px;
+}
+
+.cart_label_container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cart_tittle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  color: #292929;
+  margin: 24px 0px 0px 36px;
+}
+
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.container-fluid {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.course_img_container {
+  padding: 0;
+}
+
+.course_info_container {
+  padding: 0;
+}
+
+.course_card {
+  background: #292929;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 0px;
+  margin: 24px 0px 0px 24px;
+}
+
+.courses_cart_list {
+  background: #292929;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 0px;
+  margin: 24px 20px 0px 98px;
+}
+
+.course_title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  margin: 0 20px;
+}
+
+.course_cart_title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.price_box {
+  background: #494949;
+  border: 7px solid #292929;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.price_box_text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.btn_delete_container {
+  padding: 30%;
+}
+
+.btn_wishes_container {
+  padding-right: 30%;
+  padding-left: 30%;
+}
+
+.wishes_btn {
+  background: #FFD600;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+}
+
+.course_delete_btn {
+
+  background: #E30000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+}
+
+.course_btn_container {
+  align-items: center;
+}
+
+.course_categories {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 10px 30px 20px 20px;
+}
+
+.course_price {
+  text-align: right;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 15px;
+  color: #FFFFFF;
+}
+
+.total_price_label_total {
+  padding-left: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 21px;
+  text-align: left;
+  color: #FFD600;
+}
+
+.total_price_label_price {
+  padding-right: 20px;
+  text-align: right;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 21px;
+  color: #FFD600;
+}
+
+.buy_btn {
+  background: #FFD600;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+
+  margin: 20px;
+}
+
+.buy_btn_text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 16px;
+  display: flex;
+  text-align: center;
+
+  margin: 5% 40%;
+
+  color: #000000;
+}
+
+.course_img {
+  margin: 20px 20px 20px 10px;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.stars {
+  margin: 20px 0px 0px 20px;
+  unicode-bidi: bidi-override;
+  color: #FFC107;
+}

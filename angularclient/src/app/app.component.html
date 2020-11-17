@@ -1,0 +1,35 @@
+<body>
+
+<div class="navbar navbar-expand-sm navbar-dark justify-content-end">
+
+  <img src="./assets/logo2.png" alt="logo" id="logo">
+
+  <ul class="navbar-nav" id="main-nav">
+
+    <li class="nav-item" routerLink="/courses"><a class="text-white">ПОИСК КУРСОВ</a></li>
+
+    <li class="nav-item" routerLink="/my-courses" *ngIf="isLoggedIn();"><a class="text-white" *ngIf="isLoggedIn();">МОИ КУРСЫ</a></li>
+
+    <li class="nav-item" routerLink="/about"><a class="text-white">О ПРОЕКТЕ</a></li>
+
+    <li class="nav-item" *ngIf="!isLoggedIn();" routerLink="/login">
+      <a class="black-text">Войти / Зарег</a>
+      <button class="btn btn-outline-warning">ВОЙТИ</button>
+    </li>
+
+    <li class="nav-item pl-5" *ngIf="isLoggedIn();" [routerLink]="['/users', userInfo.username]">
+      <img src="./assets/image1.png" alt="avatar" id="avatar">
+      <a class="black-text">Личный кабинет</a>
+      <a class="text-white" id="profile">Личный кабинет</a>
+      <a class="text-white font-weight-light" id="email">{{userInfo.email}}</a>
+    </li>
+
+  <li class="nav-item" *ngIf="isLoggedIn();" routerLink="/cart"><a><img src="./assets/cart.svg" alt="cart" id="cart">
+    <a id="count-for-cart" *ngIf="isLoggedIn();"></a>
+  </a></li>
+
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
+</body>

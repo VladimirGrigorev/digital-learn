@@ -1,0 +1,60 @@
+<p id="my-courses-text">Мои курсы</p>
+<ul class="nav nav-pills">
+  <li class="nav-item pr-3">
+    <a class="nav-link active" [routerLink]="">Курсы</a>
+  </li>
+  <li class="nav-item pr-3">
+    <a class="nav-link disabled" [routerLink]="">Избранное</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" [routerLink]="">Список желаний</a>
+  </li>
+</ul>
+
+<h3 id="empty-list-materials-text" *ngIf="idCourses.length == 0">Пока курсов нет</h3>
+<div *ngFor="let course of idCourses" id="my-course-list">
+  <div class="card" (click)="click(find(course).id)">
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{{find(course).imgUrl}}" width="170" height="153" alt="course_img" id="course_img">
+      </div>
+      <div class="col-md-9">
+        <div class="card-body">
+          <div class="stars">
+            <span *ngFor="let j of courseService.getRatingArray(find(course))">{{j ? '★' : '☆'}}</span>
+          </div>
+          <p class="card-text" id="link" routerLink="/">Оставить отзыв</p>
+          <h4 class="card-title">{{find(course).name}}</h4>
+          <p class="card-text" id="description"> {{find(course).description}}</p>
+          <div class="progress">
+            <div class="progress-bar" style="width:0%"><a>Пройдено 0%</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="my-recommendations-container">
+  <a>Наши рекомендации</a>
+  <div *ngFor="let course of recommendationCourses" id="my-card-recommendations">
+    <div class="card" (click)="click(course.id)">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{{course.imgUrl}}" width="170" height="153" alt="course_img" id="recommendations_img">
+        </div>
+
+        <div class="col-md-6">
+          <div class="card-body">
+            <div class="stars">
+              <span *ngFor="let j of courseService.getRatingArray(course)">{{j ? '★' : '☆'}}</span>
+            </div>
+            <h4 class="card-title" id="title-for-rec">{{course.name}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

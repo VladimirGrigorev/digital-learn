@@ -1,0 +1,337 @@
+.user-container{
+  margin: 43px 43px 0px 44px;
+  padding: 25px 40px 18px 41px;
+
+  height: auto;
+  width: calc(100% - 86px);
+
+  background: #E5E5E5;
+  border-radius: 10px;
+}
+
+#img-text{
+  font-size: 20px;
+  margin: 14px 0px 16px 20px;
+}
+
+#img-img{
+  font-size: 20px;
+  margin: 14px 0px 16px 20px;
+}
+
+#img-other{
+  font-size: 20px;
+  margin: 14px 0px 16px 20px;
+}
+
+#img-text2{
+  opacity: 50%;
+  font-size: 20px;
+  margin: 14px 0px 16px 20px;
+}
+
+#img-img2{
+  opacity: 50%;
+  font-size: 20px;
+  margin: 14px 0px 16px 20px;
+}
+
+#img-other2{
+  opacity: 50%;
+  font-size: 20px;
+  margin: 14px 0px 16px 20px;
+}
+
+#user-about-text{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #292929;
+}
+
+#avatar{
+  border-radius: 30px;
+  border: 2px solid white;
+  margin-bottom: 10px;
+}
+
+#user-about-name{
+  margin-left: 10px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #292929;
+}
+
+#user-creator-about-text{
+  margin-top: -10px;
+  margin-left: 10px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #292929;
+}
+
+#user-about-desc{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: justify;
+
+  color: rgba(41, 41, 41, 0.7);
+}
+
+.img-container{
+  margin: 43px 0px 0px 42px;
+}
+
+.course-img{
+  width: calc(100% - 42px);
+}
+
+#body-container{
+  margin-top: 43px;
+}
+
+.stars {
+  margin-right: 5px;
+  unicode-bidi: bidi-override;
+  color: #FFC107;
+}
+
+#count-reviews{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+
+  text-align: justify;
+  text-decoration-line: underline;
+}
+
+#count-customers{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+
+  text-align: justify;
+
+  color: #3CB529;
+}
+
+#course-name{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #292929;
+}
+
+#course-desc{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: justify;
+
+  color: rgba(41, 41, 41, 0.7);
+}
+
+#course-price{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #292929;
+}
+
+#to-cart-btn{
+  background-color: #FFD600;
+  color: #292929;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 13px;
+  text-align: justify;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+#img-cool{
+  margin-right: 5px;
+}
+
+#list-materials-text{
+  margin: 40px 0px 0px 42px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #292929;
+}
+
+/*.lesson-container{*/
+/*  margin: 5px 43px 0px 42px;*/
+/*}*/
+
+/*.card{*/
+/*  height: 50px;*/
+
+/*  background: #E5E5E5;*/
+/*  border-radius: 5px;*/
+
+/*  margin-top: 17px;*/
+/*}*/
+
+/*.card-text{*/
+/*  margin-top: -4px;*/
+/*  font-family: Roboto, sans-serif;*/
+/*  font-style: normal;*/
+/*  font-weight: bold;*/
+/*  font-size: 13px;*/
+/*  line-height: 15px;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  text-align: center;*/
+
+/*  color: rgba(0, 0, 0, 0.4);*/
+/*}*/
+
+#img-block{
+  margin: 8px 0px 16px 10px;
+  opacity: 50%;
+}
+
+#text-block{
+  margin-top: -12px;
+  margin-left: -10px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+  opacity: 50%;
+}
+
+#btn-download{
+  background: #0000CD;
+  border-radius: 3px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 13px;
+
+  color: #FFFFFF;
+}
+
+#img-download{
+  font-size: 20px;
+}
+
+#text-download{
+  position: relative;
+  bottom: 2px;
+
+  margin-left: 8px;
+}
+
+#my-video{
+  height: 250px;
+  margin-top: 10px;
+}
+
+.lesson-container{
+  margin: 5px 43px 0px 42px;
+}
+
+.card{
+  height: auto;
+
+  background: #E5E5E5;
+  border-radius: 5px;
+
+  margin-top: 17px;
+}
+
+#card-text-lesson{
+  margin-top: -4px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #292929;
+}
+
+#img-video{
+  margin: 14px 0px 16px 20px;
+}
+
+#img-video2{
+  margin: 14px 0px 16px 20px;
+  opacity: 70%;
+}
+
+.card-title{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+
+  color: #292929;
+}
+
+.card-text{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+
+  color: rgba(41, 41, 41, 0.7);
+}

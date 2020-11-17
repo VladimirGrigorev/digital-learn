@@ -1,0 +1,28 @@
+<body class="text-center">
+<div class="profile">
+  <div class="user-profile">
+    <div class="user-details">
+      <div class="container h-100">
+        <div class="row justify-content-center align-items-center">
+          <img src="./assets/image 1.png" alt="avatar" id="avatar">
+        </div>
+      </div>
+      <br />
+      <div class="user-summary">
+        <h1 class="h3 mb-3 font-weight-normal">Email: {{userInfo.email}}</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Имя пользователя: {{username}}</h1>
+        <h1 class="h3 mb-3 font-weight-normal">
+          <ng-container *ngFor="let role of userInfo.roles">
+            <a *ngIf="role.name == 'ROLE_ADMIN'">Вы вошли как администратор</a>
+            <a *ngIf="role.name == 'ROLE_USER'"></a>
+            <a *ngIf="role.name == 'ROLE_MENTOR'">Вы вошли как ментор</a>
+          </ng-container></h1>
+      </div>
+      <br />
+      <button class="btn btn-warning" *ngIf="isAdmin" routerLink="/users"><i class="fa fa-users" ></i> ПОЛЬЗОВАТЕЛИ</button>
+      <button type="button" class="btn btn-primary ml-4" (click)="logout()"><i class="fa fa-sign-out" ></i>ВЫЙТИ</button>
+    </div>
+  </div>
+</div>
+</body>
+

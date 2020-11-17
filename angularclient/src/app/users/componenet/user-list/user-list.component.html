@@ -1,0 +1,46 @@
+<div class="card bg-dark my-5">
+  <div class="card-body">
+    <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+    <ul class="text-center list-inline py-3">
+<!--      <li class="list-inline-item">-->
+<!--        <a routerLink="/adduser" class="btn btn-info">Add User</a>-->
+<!--      </li>-->
+    </ul>
+  </div>
+</div>
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Имя пользователя</th>
+        <th scope="col">Email</th>
+        <th scope="col">Роль</th>
+        <th scope="col">Блок</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+        <td>
+          <ng-container *ngFor="let role of user.roles">
+            {{ role.name }}
+          </ng-container>
+        </td>
+        <td *ngIf="currentUser.username != user.username">
+          <div *ngIf="user.isblock">
+            <button class="btn btn-danger" (click)="block(user.id)">Разблокировать</button>
+          </div>
+          <div *ngIf="!user.isblock">
+            <button class="btn btn-primary" (click)="block(user.id)">Заблокировать</button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

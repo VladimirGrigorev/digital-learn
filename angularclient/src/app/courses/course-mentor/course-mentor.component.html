@@ -1,0 +1,113 @@
+<div class="row no-gutters">
+  <div class="col-md-4">
+    <div class="img-container">
+      <img class="course-img" src="{{course.imgUrl}}" width="400" height="236" *ngIf="course.imgUrl">
+      <img class="course_img" src="./assets/16.jpg" width="400" height="236" *ngIf="!course.imgUrl">
+    </div>
+  </div>
+  <div class="col-md-8" id="body-container">
+    <div class="row no-gutters">
+      <div class="col-md-auto">
+        <div class="stars">
+          <span *ngFor="let j of courseService.getRatingArray(course)">{{j ? '★' : '☆'}}</span>
+        </div>
+      </div>
+      <div class="col-md-auto">
+        <a id="count-reviews">862 отзыва</a>
+      </div>
+    </div>
+
+    <img src="assets/Group9.svg" alt="img-cool" id="img-cool">
+    <a id="count-customers">Более 100 человек купили этот курс</a><br/>
+    <a id="course-name">{{course.name}}</a><br/>
+
+    <p id="course-desc">{{course.description}}</p>
+
+    <a id="course-price">Стоимость: {{course.price}} рублей</a><br/>
+
+    <div class="row" id="btn-container">
+      <div class="col-md-auto">
+        <button class="btn" id="btn-download-img" routerLink=""><i class="fa fa-cloud-upload" id="img-download-img"></i> <a id="text-download-img">ЗАГРУЗИТЬ ФОТО КУРСА</a> </button>
+      </div>
+      <div class="col-md-auto">
+        <button class="btn" id="btn-edit" routerLink="/course-mentor/{{id}}/edit"><i class="fa fa-pencil" id="img-edit"></i> <a id="text-edit">РЕДАКТИРОВАТЬ ОПИСАНИЕ</a> </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-right: 0">
+  <div class="col-md-auto">
+    <h3 id="list-materials-text">Список обучающих материалов курса</h3>
+  </div>
+  <div class="col-md-auto">
+    <button class="btn" id="btn-add-lesson" routerLink="/course-mentor/{{id}}/addTutorial"><i class="fa fa-cloud-upload" id="img-add-lesson"></i> <a id="text-add-lesson">ДОБАВИТЬ УРОК</a> </button>
+  </div>
+</div>
+
+
+<div class="lesson-container">
+  <h3 id="empty-list-materials-text" *ngIf="course.content.length == 0">Пока материалов нет</h3>
+  <div class="card" *ngFor="let fileData of course.content; let i = index;">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="row no-gutters">
+          <div class="col-md-auto">
+            <img src="./assets/image 23.svg" alt="img-video" id="img-video" *ngIf="fileData.contentType == 'VIDEO'">
+            <i class="fa fa-file-text" id="img-text" *ngIf="fileData.contentType == 'ARTICLE'"></i>
+            <i class="fa fa-file-image-o" id="img-img" *ngIf="fileData.contentType == 'IMAGE'"></i>
+            <i class="fa fa-file-zip-o" id="img-other" *ngIf="fileData.contentType == 'OTHER'"></i>
+          </div>
+
+          <div class="col-md-11">
+            <div class="card-body">
+              <p class="card-text" id="card-text-lesson">Урок {{i + 1}} - {{fileData.contentName}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body" id="description-body">
+          <h4 class="card-title">Описание:</h4>
+          <p class="card-text">{{fileData.description}}</p>
+
+          <h4 class="card-title">Имя файла:</h4>
+          <p class="card-text">{{fileData.name}}</p>
+
+          <h4 class="card-title">Тип файла:</h4>
+          <p class="card-text">{{fileData.contentType}}</p>
+
+          <button class="btn" id="btn-delete" (click)="deleteFile(fileData.id)"><i class="fa fa-trash" id="img-trash"></i> <a id="text-trash">УДАЛИТЬ</a> </button>
+          <button class="btn" id="btn-download" (click)="downloadFile(fileData.name)"><i class="fa fa-cloud-download" id="img-download"></i> <a id="text-download">СКАЧАТЬ</a> </button>
+        </div>
+      </div>
+      <div class="col-md-5" *ngIf="fileData.contentType == 'VIDEO'">
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          poster="./assets/concrete_course_img.png"
+          data-setup="{}">
+
+<!--          "/MP4", "/M4V", "/MOV", "/MPG", "/MPEG", "/WEBM"-->
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/mp4" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/m4v" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/mov" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/mpg" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/mpeg" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/webm" />
+
+          <p class="vjs-no-js">
+            To view this video   ple ase enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a>
+          </p>
+
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://vjs.zencdn.net/7.7.6/video.js"></script>

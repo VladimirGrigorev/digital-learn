@@ -1,0 +1,56 @@
+.tittle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+}
+
+.img-container {
+  width: calc(100% - 42px);
+}
+
+.form-control {
+  border: 1px solid #020202;
+  border-radius: 0.5rem;
+  color: rgba(41, 41, 41, 0.7);
+}
+
+.form-group {
+  margin: 0;
+}
+
+.form_label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+  color: #292929;
+}
+
+.top_tittle {
+  padding-top: 5%;
+}
+
+.container-fluid {
+  width: 90%;
+}
+
+.btn_save {
+  background: #D2FAB9;
+  border: 1px solid #292929;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.btn_cancel {
+  color: #FFFFFF;
+  background: #E35252;
+  border: 1px solid #292929;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-left: 20px;
+}

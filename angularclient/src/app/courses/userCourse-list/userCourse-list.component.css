@@ -1,0 +1,214 @@
+.nav{
+  position: absolute;
+  left: 3%;
+  top: 25%;
+}
+
+.nav-link{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.nav-link a{
+  color: #000000;
+}
+
+.nav-link.active{
+  color: #000000;
+  border-radius: 0px;
+  background: #FFD600;
+}
+
+#my-courses-text{
+  position: absolute;
+  width: 200px;
+  height: 42px;
+  left: 3%;
+  top: 17%;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #292929;
+}
+
+#empty-list-materials-text{
+  position: absolute;
+  width: 400px;
+  height: 50px;
+  left: 3%;
+  top: 40%;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #292929;
+}
+
+#my-course-list{
+  position: relative;
+  left: 42px;
+  top: 150px;
+  width: 68%;
+}
+
+#my-course-list .card{
+  margin-top: 42px;
+  height: 194px;
+  background: #292929;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+#my-course-list .card-body{
+  padding-top: 1% !important;
+  margin-left: -7% !important;
+  margin-right: 5% !important;
+}
+
+.card-title{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+
+  margin-top: -2% !important;
+}
+
+.card-text{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: justify;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+#title-for-rec{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+#course_img{
+  margin-left: 8%;
+  margin-top: 8%;
+}
+
+.fa {
+  font-size: 13px;
+}
+
+.checked {
+  color: orange;
+}
+
+#link{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+
+  color: #FFFFFF;
+}
+
+#link:hover{
+  text-decoration-line: underline;
+}
+
+#description{
+  height: 51px !important;
+}
+
+.progress{
+  height: 29px;
+  width: 45%;
+  background: #494949;
+  border: 1px solid #FFD600;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.progress-bar{
+  background: #FFD600;
+  border: 1px solid #FFD600;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.progress-bar a{
+  color: #000000;
+}
+
+#my-recommendations-container{
+  position: absolute;
+  left: 75.07%;
+  right: 2.92%;
+  top: 270px;
+  height: auto;
+
+  padding-bottom: 50px;
+  background: #292929;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+#my-recommendations-container a{
+  position: absolute;
+  left: 20%;
+  top: 15px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #FFFFFF;
+}
+
+#my-card-recommendations{
+  position: relative;
+  top: 35px;
+  margin-top: 20px;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+#my-card-recommendations .card{
+  height: 126px;
+  background: #494949;
+  border-radius: 10px;
+}
+
+#recommendations_img{
+  width: 93px;
+  height: 84px;
+  margin-top: 21px;
+  margin-left: 21px;
+}
+
+#my-card-recommendations .card-body{
+  margin-top: -5%;
+  margin-left: -25%;
+}
+
+.stars {
+  unicode-bidi: bidi-override;
+  color: #FFC107;
+}

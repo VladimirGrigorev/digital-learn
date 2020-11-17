@@ -1,0 +1,38 @@
+<body class="text-center">
+  <form class="form-login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <app-alert></app-alert>
+    <h1 class="h2 mb-3 font-weight-normal">Пожалуйста войдите</h1>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" class="form-control" required
+             [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }" />
+      <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Пожалуйста введите свой email!</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Пароль</label>
+      <input type="password" formControlName="password" class="form-control" required
+             [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors }" />
+      <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Пожалуйста введите свой пароль!</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-block">Войти</button><br />
+      <div id = "google-button" class="rounded">
+        <a href="{{GOOGLE_AUTH_URL}}"
+           class="btn btn-outline-light text-dark btn-block" role="button">
+          <img src='../../../assets/google-logo.png' alt="Google" id="google-image"/>Войти с помощью Google</a>
+      </div>
+      <div id = "github-button" class="rounded">
+        <a href="{{GITHUB_AUTH_URL}}"
+           class="btn btn-outline-light text-dark btn-block" role="button">
+          <img src='../../../assets/github-logo.png' alt="Github" id="github-image"/>Войти с помощью Github</a>
+        </div>
+      <br />
+      <h1 class="h5 mb-1 font-weight-normal">Новый пользователь?</h1>
+      <a routerLink="/signup" class="btn btn-link d-inline-block">Зарегистрироваться сейчас!</a>
+    </div>
+  </form>
+</body>

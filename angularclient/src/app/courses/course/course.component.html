@@ -1,0 +1,132 @@
+<div class="row no-gutters">
+  <div class="col-md-4">
+    <div class="img-container">
+      <img class="course-img" src="{{course.imgUrl}}" width="400" height="236" *ngIf="course.imgUrl">
+      <img class="course_img" src="./assets/16.jpg" width="400" height="236" *ngIf="!course.imgUrl">
+    </div>
+  </div>
+  <div class="col-md-5" id="body-container">
+    <div class="row no-gutters">
+      <div class="col-md-auto">
+        <div class="stars">
+          <span *ngFor="let j of courseService.getRatingArray(course)">{{j ? '★' : '☆'}}</span>
+        </div>
+      </div>
+      <div class="col-md-auto">
+        <a id="count-reviews">862 отзыва</a>
+      </div>
+    </div>
+
+    <img src="assets/Group9.svg" alt="img-cool" id="img-cool">
+    <a id="count-customers">Более 100 человек купили этот курс</a><br/>
+    <a id="course-name">{{course.name}}</a><br/>
+
+    <p id="course-desc">{{course.description}}</p>
+
+    <a id="course-price">Стоимость: {{course.price}} рублей</a><br/>
+
+    <button class="btn" (click)="toCart(course.id)" *ngIf="isLoggedIn();" id="to-cart-btn">В корзину</button>
+  </div>
+  <div class="col-md-3">
+    <div class="user-container">
+      <p class="text-center" id="user-about-text">О создателе курса</p>
+      <div class="row">
+        <div class="col-md-3">
+          <img src="./assets/image1.png" alt="avatar" id="avatar">
+        </div>
+        <div class="col-md-9">
+          <p id="user-about-name">{{course.user.username}}</p>
+          <p id="user-creator-about-text">Создатель курса</p>
+        </div>
+      </div>
+      <p id="user-about-desc">Я сделал этот курс для вас.</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="list-materials-text">Список обучающих материалов курса</h3>
+<div class="lesson-container" *ngIf="!isLoggedIn() || !isBlock">
+  <div class="card" *ngFor="let fileData of course.content; let i = index;">
+    <div class="row no-gutters">
+      <div class="col-md-auto">
+        <img src="./assets/image23.svg" alt="img-video" id="img-video2" *ngIf="fileData.contentType == 'VIDEO'">
+        <i class="fa fa-file-text" id="img-text2" *ngIf="fileData.contentType == 'ARTICLE'"></i>
+        <i class="fa fa-file-image-o" id="img-img2" *ngIf="fileData.contentType == 'IMAGE'"></i>
+        <i class="fa fa-file-zip-o" id="img-other2" *ngIf="fileData.contentType == 'OTHER'"></i>
+      </div>
+
+      <div class="col-md-11">
+        <div class="card-body">
+          <h4 class="card-text">Урок {{i + 1}} - {{fileData.contentName}}</h4>
+        </div>
+      </div>
+
+      <div class="col-md-auto">
+        <img src="./assets/image22.svg" alt="img-block" id="img-block">
+        <a id="text-block">Недоступно</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lesson-container" *ngIf="isLoggedIn() && isBlock">
+  <div class="card" *ngFor="let fileData of course.content; let i = index;">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="row no-gutters">
+          <div class="col-md-auto">
+            <img src="./assets/image 23.svg" alt="img-video" id="img-video" *ngIf="fileData.contentType == 'VIDEO'">
+            <i class="fa fa-file-text" id="img-text" *ngIf="fileData.contentType == 'ARTICLE'"></i>
+            <i class="fa fa-file-image-o" id="img-img" *ngIf="fileData.contentType == 'IMAGE'"></i>
+            <i class="fa fa-file-zip-o" id="img-other" *ngIf="fileData.contentType == 'OTHER'"></i>
+          </div>
+
+          <div class="col-md-11">
+            <div class="card-body">
+              <p class="card-text" id="card-text-lesson">Урок {{i + 1}} - {{fileData.contentName}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body" id="description-body">
+          <h4 class="card-title">Описание:</h4>
+          <p class="card-text">{{fileData.description}}</p>
+
+          <h4 class="card-title">Имя файла:</h4>
+          <p class="card-text">{{fileData.name}}</p>
+
+          <h4 class="card-title">Тип файла:</h4>
+          <p class="card-text">{{fileData.contentType}}</p>
+
+          <button class="btn" id="btn-download" (click)="downloadFile(fileData.name)"><i class="fa fa-cloud-download" id="img-download"></i> <a id="text-download">СКАЧАТЬ</a> </button>
+        </div>
+      </div>
+      <div class="col-md-5" *ngIf="fileData.contentType == 'VIDEO'">
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          poster="./assets/concrete_course_img.png"
+          data-setup="{}">
+
+          <!--          "/MP4", "/M4V", "/MOV", "/MPG", "/MPEG", "/WEBM"-->
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/mp4" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/m4v" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/mov" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/mpg" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/mpeg" />
+          <source src="{{uploadDir}}{{fileData.name}}" type="video/webm" />
+
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a>
+          </p>
+
+        </video>
+      </div>
+    </div>
+  </div>
+</div>

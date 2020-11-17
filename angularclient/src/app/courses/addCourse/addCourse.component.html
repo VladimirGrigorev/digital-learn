@@ -1,0 +1,53 @@
+<body>
+<div class="container-fluid">
+  <div class="row top_tittle">
+    <div class="tittle">
+      Создание нового курса
+    </div>
+  </div>
+  <div class="row" style="margin-top: 40px">
+    <div class="col-12" style="padding: 0; margin: 0">
+      <form class="form-add" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label class="form_label">Название:</label>
+          <input formControlName="name" type="text" placeholder="Введите название.." class="form-control" required
+                 [ngClass]="{ 'is-invalid': form.name.dirty && form.name.errors }"/>
+          <div *ngIf="form.name.touched && form.name.errors" class="invalid-feedback">
+            <div *ngIf="form.name.errors.required">Напишите название!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form_label">Описание:</label>
+          <textarea formControlName="description" type="text" placeholder="Введите описание.." class="form-control" rows="3"
+                    required [ngClass]="{ 'is-invalid': form.description.dirty && form.description.errors }"></textarea>
+          <div *ngIf="form.description.touched && form.description.errors" class="invalid-feedback">
+            <div *ngIf="form.description.errors.required">Напишите описание!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form_label">Стоимость:</label>
+          <input formControlName="price" type="number" class="form-control" value="{{course.price}}" required
+                 pattern="^[1-9][0-9]*$" [ngClass]="{ 'is-invalid': form.price.dirty && form.price.errors }"/>
+          <div *ngIf="form.price.dirty && form.price.errors" class="invalid-feedback">
+            <div *ngIf="form.price.errors.required">Напишите стоимость!</div>
+            <div *ngIf="form.price.errors.pattern">Стоимость не может быть меньше или равна нулю!</div>
+          </div>
+        </div>
+        <br />
+        <div class="dropdown">
+          <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+            {{chooseCategoryName}}
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" *ngFor="let category of categories" (click)="choose(category)">{{category.name}}</a>
+          </div>
+        </div>
+        <div class="row mt-4" style="margin: 0">
+          <button class="btn_save btn" type="submit" [disabled]="!this.addForm.valid">СОЗДАТЬ</button>
+          <button class="btn_cancel btn" routerLink="/courses">ОТМЕНИТЬ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>

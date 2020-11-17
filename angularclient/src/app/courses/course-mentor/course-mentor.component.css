@@ -1,0 +1,313 @@
+.img-container{
+  margin: 43px 0px 0px 42px;
+}
+
+.course-img{
+  width: calc(100% - 42px);
+}
+
+#body-container{
+  margin-top: 43px;
+}
+
+.stars {
+  margin-right: 5px;
+  unicode-bidi: bidi-override;
+  color: #FFC107;
+}
+
+#count-reviews{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+
+  text-align: justify;
+  text-decoration-line: underline;
+}
+
+#count-customers{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+
+  text-align: justify;
+
+  color: #3CB529;
+}
+
+#course-name{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #292929;
+}
+
+#course-desc{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: justify;
+  margin-right: 3%;
+
+  color: rgba(41, 41, 41, 0.7);
+}
+
+#course-price{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #292929;
+}
+
+#img-cool{
+  margin-right: 5px;
+}
+
+#list-materials-text{
+  margin: 40px 0px 0px 42px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #292929;
+}
+
+#empty-list-materials-text{
+  margin: 40px 0px 0px 42px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #292929;
+}
+
+.lesson-container{
+  margin: 5px 43px 0px 42px;
+}
+
+.card{
+  height: auto;
+
+  background: #E5E5E5;
+  border-radius: 5px;
+
+  margin-top: 17px;
+}
+
+#card-text-lesson{
+  margin-top: -4px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #292929;
+}
+
+#img-video{
+  margin: 14px 2px 16px 20px;
+}
+
+#img-text{
+  font-size: 20px;
+  margin: 14px 0px 16px 20px;
+}
+
+#img-img{
+  font-size: 20px;
+  margin: 14px 0px 16px 20px;
+}
+
+#img-other{
+  font-size: 20px;
+  margin: 14px 0px 16px 20px;
+}
+
+.card-title{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+
+  color: #292929;
+}
+
+.card-text{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+
+  color: rgba(41, 41, 41, 0.7);
+}
+
+#btn-delete{
+  background: #E30000;
+  border-radius: 3px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 13px;
+
+  color: #FFFFFF;
+}
+
+#img-trash{
+  font-size: 20px;
+}
+
+#text-trash{
+  position: relative;
+  bottom: 2px;
+
+  margin-left: 8px;
+}
+
+#description-body{
+  margin-top: -20px;
+}
+
+#btn-download-img{
+  background: #B9FF8D;
+  border: 1px solid #292929;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 9px;
+  line-height: 9px;
+
+  color: #292929;
+}
+
+#img-download-img{
+  font-size: 14px;
+}
+
+#text-download-img{
+  position: relative;
+  bottom: 2px;
+
+  margin-left: 8px;
+}
+
+#btn-edit{
+  background: #FFD600;
+  border: 1px solid #292929;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 9px;
+  line-height: 9px;
+
+  color: #292929;
+}
+
+#img-edit{
+  font-size: 14px;
+}
+
+#text-edit{
+  position: relative;
+  bottom: 2px;
+
+  margin-left: 8px;
+}
+
+#btn-container{
+  margin-top: 30px;
+  margin-right: 0;
+}
+
+#btn-add-lesson{
+  margin-top: 49px;
+
+  background: #B9FF8D;
+  border: 1px solid #292929;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 9px;
+  line-height: 9px;
+
+  color: #292929;
+}
+
+#img-add-lesson{
+  font-size: 14px;
+}
+
+#text-add-lesson{
+  position: relative;
+  bottom: 2px;
+
+  margin-left: 8px;
+}
+
+#btn-download{
+  margin-left: 30px;
+  background: #0000CD;
+  border-radius: 3px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 13px;
+
+  color: #FFFFFF;
+}
+
+#img-download{
+  font-size: 20px;
+}
+
+#text-download{
+  position: relative;
+  bottom: 2px;
+
+  margin-left: 8px;
+}
+
+#my-video{
+  height: 250px;
+  margin-top: 10px;
+}

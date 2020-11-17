@@ -1,0 +1,76 @@
+<body>
+<div *ngIf="cart.trainings.length != 0">
+  <h1 class="cart_tittle">Корзина</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-7 course_list">
+        <div *ngFor="let course of cart.trainings" class="course_card">
+          <div class="row">
+            <div class="col-9">
+              <div class="row">
+                <div class="col-2 course_img_container">
+                  <img class="course_img" src="{{course.imgUrl}}" width="80">
+                </div>
+                <div class="col-10 course_info_container">
+                  <div class="stars">
+                    <span *ngFor="let j of courseService.getRatingArray(course)">{{j ? '★' : '☆'}}</span>
+                  </div>
+                  <a class="course_title" routerLink="/course/:id">{{course.name}}</a>
+                  <div class="row">
+                    <p *ngFor="let category of course.categories" class="course_categories">#{{category.name}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1">
+              <div class="btn_delete_container">
+                <button class="course_delete_btn" type="button" style="padding-bottom: 4px;" (click)="click(course.id, false)">
+                  <img src="assets/btn_delete.png">
+                </button>
+              </div>
+              <div class="btn_wishes_container">
+                <button class="wishes_btn" type="button">
+                  <img src="assets/bth_wishes.png" style="padding-bottom: 5px;">
+                </button>
+              </div>
+            </div>
+            <div class="col-2 price_box">
+              <div class="d-flex h-100">
+                <div class="justify-content-center align-self-center price_box_text">
+                  {{course.price}} рублей
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 courses_cart_list">
+        <div class="cart_label_container">
+          <h1 class="cart_label">Корзина</h1>
+        </div>
+        <div *ngFor="let course of cart.trainings" class="course_info_container" style="margin-left: 20px; margin-right: 20px">
+          <div class="row">
+            <div class="col-12" style="padding: 0;">
+              <p class="course_cart_title" >{{course.name}}</p>
+            </div>
+            <div class="col-12 course_price" style="padding: 0;">
+              {{course.price}} рублей
+            </div>
+          </div>
+          <hr style="border: 1px solid rgba(255, 255, 255, 0.13);">
+        </div>
+        <div class="row total_price_container">
+          <div class="col-4 total_price_label_total">ВСЕГО</div>
+          <div class="col-8 total_price_label_price">{{totalPrice}} рублей</div>
+        </div>
+        <div class="row">
+          <button class="col-11 buy_btn" (click)="buy()">
+            <a class="buy_btn_text">Купить</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h1 *ngIf="cart.trainings.length == 0" class="cart_tittle">Ваша корзина пуста!</h1>
+</body>

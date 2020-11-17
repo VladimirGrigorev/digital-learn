@@ -1,0 +1,46 @@
+<body>
+  <div class="container-fluid">
+    <div class="row top_tittle">
+      <div class="tittle">Редактирование информации о курсе</div>
+    </div>
+    <div class="row" style="margin-top: 40px">
+      <div class="col-4" style="padding: 0; margin: 0">
+        <img class="img-container" src="{{course.imgUrl}}" width="400" height="236" alt="Course image" *ngIf="course.imgUrl">
+        <img class="course_img" src="./assets/16.jpg" width="400" height="236" *ngIf="!course.imgUrl">
+      </div>
+      <div class="col-8" style="padding: 0; margin: 0">
+        <form class="form-edit" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label class="form_label">Название:</label>
+            <input formControlName="name" type="text" class="form-control" value="{{course.name}}" required
+                   [ngClass]="{ 'is-invalid': form.name.dirty && form.name.errors }"/>
+            <div *ngIf="form.name.dirty && form.name.errors" class="invalid-feedback">
+              <div *ngIf="form.name.errors.required">Напишите название!</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form_label">Описание:</label>
+            <textarea formControlName="description" type="text" class="form-control" rows="3" value="{{course.description}}" required
+                      [ngClass]="{ 'is-invalid': form.description.dirty && form.description.errors }"></textarea>
+            <div *ngIf="form.description.dirty && form.description.errors" class="invalid-feedback">
+              <div *ngIf="form.description.errors.required">Напишите описание!</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form_label">Стоимость:</label>
+            <input formControlName="price" type="number" class="form-control" value="{{course.price}}" required
+                   pattern="^[1-9][0-9]*$" [ngClass]="{ 'is-invalid': form.price.dirty && form.price.errors }"/>
+            <div *ngIf="form.price.dirty && form.price.errors" class="invalid-feedback">
+              <div *ngIf="form.price.errors.required">Напишите стоимость!</div>
+              <div *ngIf="form.price.errors.pattern">Стоимость не может быть меньше или равна нулю!</div>
+            </div>
+          </div>
+          <div class="row mt-4" style="margin: 0">
+            <button class="btn_save btn" type="submit" [disabled]="!this.editForm.valid">СОХРАНИТЬ</button>
+            <button class="btn_cancel btn" routerLink="/course-mentor/{{course.id}}">ОТМЕНИТЬ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
